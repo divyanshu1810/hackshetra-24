@@ -24,7 +24,7 @@ export function NewTransit() {
 		destination: destination,
 	};
 
-	const auth_token = "your_authentication_token"; 
+	const auth_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRpdnlhbnNodS4xODEwQGdtYWlsLmNvbSIsImlhdCI6MTcxMDAxNjUwMCwiZXhwIjoxNzEwMTAyOTAwfQ.P3_tOgc-71tafObb-Xu_0GfANgFXZlHbuF6k2p7qkio"; 
 
 	const headers = {
 		Authorization: `Bearer ${auth_token}`,
@@ -38,6 +38,13 @@ export function NewTransit() {
 			})
 			.then((response) => {
 				console.log(response);
+				setBillingDate("");
+				setCompanyName("");
+				setTrackingId("");
+				setShippingCompany("");
+				setContactNumber("");
+				setOrigin("");
+				setDestination("");
 			})
 			.catch((error) => {
 				console.log(error);
