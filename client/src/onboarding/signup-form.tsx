@@ -23,6 +23,7 @@ export function SignupFormDemo() {
     axios
       .post('http://localhost:3000/api/auth/signup', formData)
       .then(response => {
+        window.location.href = '/login';
         console.log(response);
       })
       .catch(error => {

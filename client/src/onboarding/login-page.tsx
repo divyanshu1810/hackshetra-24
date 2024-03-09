@@ -1,4 +1,3 @@
-import React from "react";
 import { LoginFormDemo } from "./login-form";
 
 function LoginPage() {
