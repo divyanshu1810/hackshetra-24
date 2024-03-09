@@ -1,18 +1,6 @@
-// import React from "react";
-// import Receptionist from "./receptionist";
-
-// export default function Dashboard() {
-// 	return (
-// 		<div className="">
-
-// 			<Receptionist />
-// 		</div>
-
-// 	);
-// }
-
 import React from 'react';
 import Receptionist from './receptionist';
+import { Link } from 'react-router-dom';
 
 export default function Dashboard() {
   return (
@@ -24,12 +12,13 @@ export default function Dashboard() {
               <span className="text-white font-semibold text-lg">TrackMYTransit</span>
             </div>
             <div className="flex items-center">
-              <a
-                href="#"
+              <Link
+                to="/dashboard/view-transit"
                 className="text-gray-100 hover:bg-zinc-900  hover:text-white px-3 py-2 rounded-md text-sm font-medium"
               >
                 Track Transit
-              </a>
+              </Link>
+
               <a
                 href="#"
                 className="text-gray-100 hover:bg-zinc-900 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
