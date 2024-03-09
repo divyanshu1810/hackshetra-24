@@ -1,15 +1,29 @@
 import { ObjectId } from "mongodb";
 import database from "../../loaders/database";
 import { Transit } from "../../models/transit";
+import shortid from "shortid";
 
 export const handleCreateTransit = async (transit: Transit, user: string) => {
     const collection = (await database()).collection('transit');
+    const statusCollection = (await database()).collection('status');
+    const statusId = shortid.generate();
     await collection.insertOne({
         ...transit,
         userId: user,
         isDeleted: false,
+        statusId,
         createdAt: new Date(),
+        updatedAt: new Date(),
     });
+
+    await statusCollection.insertOne({
+        transitId: statusId,
+        location: "Warehouse",
+        remark: "Transit Created",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+    });
+
 };
 
 export const handleGetTransit = async (user: string) => {
