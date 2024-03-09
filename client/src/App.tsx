@@ -1,8 +1,10 @@
+import { TypewriterEffectDemo } from './landing/landing-page';
+
 function App() {
   return (
-    <div>
-      <p className="text-3xl font-bold underline text-center">Hello world!</p>
-    </div>
+    <>
+      <TypewriterEffectDemo />
+    </>
   );
 }
 
