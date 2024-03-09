@@ -6,10 +6,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.handleLogIn = exports.handleSignUp = void 0;
 const database_1 = __importDefault(require("../../loaders/database"));
 const bcrypt_1 = __importDefault(require("bcrypt"));
-const shortid_1 = __importDefault(require("shortid"));
 const jwt_1 = __importDefault(require("../../shared/jwt"));
 const users_1 = require("../../models/users");
-const handleSignUp = async (name, email, password, role) => {
+const handleSignUp = async (name, email, password, company) => {
     const collection = (await (0, database_1.default)()).collection('users');
     const user = await collection.findOne({ email });
     if (user) {
@@ -17,7 +16,7 @@ const handleSignUp = async (name, email, password, role) => {
     }
     const saltRounds = 10;
     const hash = await bcrypt_1.default.hash(password, saltRounds);
-    const newUser = new users_1.Users(shortid_1.default.generate(), new Date(), new Date(), name, email, hash, role, false);
+    const newUser = new users_1.Users(new Date(), new Date(), name, email, hash, company, false);
     await collection.insertOne(newUser);
 };
 exports.handleSignUp = handleSignUp;
