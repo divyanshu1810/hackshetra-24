@@ -1,68 +1,79 @@
-<div align="center">
-  <img alt="logo" src="docs/logo.svg" height="120" />
-</div>
+# trackMyTransit
+Overview
 
-<div align="center">
-  <img style="margin-right: 16px;" alt="mongodb" src="https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg" height="60" />
-  <img alt="express" src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" height="60" />
-  <img alt="react" src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" height="60" />
-  <img style="margin-right: 16px;" alt="nodejs" src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" height="60" />
-</div>
-<div align="center" style="margin-top: 24px;">
-  <img style="margin-right: 16px;" alt="typescript" src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" height="48" />
-  <img style="margin-right: 16px;" alt="sass" src="https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg" height="48" />
-  <img alt="tailwindcss" src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.6ea76c3b72656960a6ae5ad8b85928d0.svg" height="48" />
-</div>
+trackMyTransit is a web application built to help users track their transit shipments, including their status and details of each container. It allows users to log in securely and access information about their shipments conveniently.
+Features
 
-<br>
-<p align="center">
-Bootstrapped using <code>Springboard</code>
-</p>
-<p align="center">
-crafted with <span style="color: #DE6C5E;">&hearts;</span> by your friends on the <a href="https://srmkzilla.net">SRMKZILLA</a> team
-</p>
-<p align="center">
-    <img src="https://img.shields.io/badge/version-0.1.0-orange" alt="version 0.1.0"/>
-</p>
+    User Authentication: Users can securely log in to their accounts to access their transit information.
+    Transit Tracking: Users can track the status of their transit shipments.
+    Container Details: Detailed information about each container in transit is available.
+    MERN Stack with TypeScript: The application is built using MongoDB, Express.js, React.js, Node.js, and TypeScript, providing a robust and scalable development environment.
 
-> Star the [repo](https://github.com/srm-kzilla/springboard). Show the love. ❣
+Installation
 
-## Built With 🚀
+To install and run trackMyTransit on your local machine, follow these steps:
 
-- [MongoDB](https://www.mongodb.com/)
-- [Express](https://expressjs.com/)
-- [React](https://reactjs.org/)
-- [Node.js](https://nodejs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [SCSS](https://sass-lang.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
+    Clone the repository:
 
-## Installation 🔧
+bash
 
-Install dependencies
+git clone https://github.com/divyanshu1810/trackMyTransit.git
 
-```
-$ yarn
-# or
-$ npm install
-```
+    Navigate to the project directory:
 
-Start the server
+bash
 
-```
-$ yarn start
-# or
-$ npm run start
-```
+cd trackMyTransit
 
-## Contributing 🤝
+    Install dependencies for both the server and client:
 
-Please read `Contributing.md` for details on our code of conduct, and the process for submitting pull requests to us.
+bash
 
-## Forking this repo 🚨
+cd server
+npm install
+cd ../client
+npm install
 
-Many people have contacted us asking if they can use this code for their own projects. The answer to that question is usually "yes", with attribution. There are some cases, such as using this code for a business or something that is greater than a personal project, that we may be less comfortable saying yes to. If in doubt, please don't hesitate to ask us.
+    Set up environment variables:
 
-We value keeping this site open source, but as you all know, _**plagiarism is bad**_. We spent a non-negligible amount of effort developing, designing, and trying to perfect this iteration of our project, and we are proud of it! All we ask is to not claim this effort as your own.
+        Create a .env file in the server directory.
 
-So, feel free to fork this repo. If you do, please just give us proper credit by linking back to our website, https://srmkzilla.net. Refer to this handy [quora post](https://www.quora.com/Is-it-bad-to-copy-other-peoples-code) if you're not sure what to do. Thanks!
+        Define the following environment variables:
+
+        makefile
+
+        PORT=5000
+        MONGODB_URI=your_mongodb_connection_string
+        SECRET_KEY=your_secret_key
+
+    Run the server:
+
+bash
+
+cd ../server
+npm start
+
+    Run the client:
+
+bash
+
+cd ../client
+npm start
+
+    Access the application in your browser at http://localhost:3000.
+
+Usage
+
+    Sign up for a new account if you're a new user, or log in if you already have an account.
+    Once logged in, you'll be directed to the dashboard where you can see the status of your transit shipments.
+    Click on a shipment to view detailed information about each container.
+
+Contributing
+
+Contributions are welcome! If you have any ideas, suggestions, or improvements, feel free to open an issue or submit a pull request.
+License
+
+This project is licensed under the MIT License.
+Contact
+
+For any inquiries or support, please contact us.
