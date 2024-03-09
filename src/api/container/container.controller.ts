@@ -1,10 +1,16 @@
 import { Request, Response } from "express";
 import { handleCreateContainer, handleGetContainerById, handleGetContainers, handleUpdateContainer } from "./container.service";
+import { isAuthorisedToDoTheActivity } from "../../shared/role";
 
 export const createContainer = async (req: Request, res: Response): Promise<void> => {
     try {
         const transitId = req.params.transitId;
         const { billNumber, amount } = req.body;
+        const isAuthorised = isAuthorisedToDoTheActivity(res.locals.user.role);
+        if (!isAuthorised) {
+            res.status(401).json({ message: "Not Authorised" });
+            return;
+        }
         await handleCreateContainer(transitId, billNumber, amount, res.locals.user._id);
         res.status(200).json({
             success: true,
@@ -47,6 +53,11 @@ export const updateContainer = async (req: Request, res: Response): Promise<void
     try {
         const { transitId, containerId } = req.params;
         const { billNumber, amount } = req.body;
+        const isAuthorised = isAuthorisedToDoTheActivity(res.locals.user.role);
+        if (!isAuthorised) {
+            res.status(401).json({ message: "Not Authorised" });
+            return;
+        }
         await handleUpdateContainer(transitId, containerId, billNumber, amount, res.locals.user._id);
         res.status(200).json({
             success: true,

@@ -11,7 +11,7 @@ export const handleSignUp = async (name: string, email: string, password: string
     }
     const saltRounds = 10;
     const hash = await bcrypt.hash(password, saltRounds);
-    const newUser = new Users(new Date(), new Date(), name, email, hash, company, false);
+    const newUser = new Users(new Date(), new Date(), name, email, hash, 'receptionist', false, company);
     await collection.insertOne(newUser);
 };
 
