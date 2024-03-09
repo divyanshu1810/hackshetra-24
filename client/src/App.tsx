@@ -13,6 +13,7 @@ function App() {
 					<Route path="/" element={<LandingPage />} />
 					<Route path="/signup" element={<SignupPage />} />
 					<Route path="/login" element={<LoginFormDemo />} />
+          <Route path="/signup" element={<SignupPage />} />
 					<Route path="/new-transit" element={<NewTransit />} />
 					<Route path="/view-transits" element={<ViewTransits />} />
 				</Routes>
@@ -20,4 +21,5 @@ function App() {
 		</>
 	);
 }
+
 export default App;
