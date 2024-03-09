@@ -30,102 +30,74 @@ export function SignupFormDemo() {
 			});
 	};
 	return (
-		<div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
-			<h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">
-				Sign In
-			</h2>
-			{/* <p className="text-neutral-600 text-sm max-w-sm mt-2 dark:text-neutral-300">
-				Sign up now if you can because we don&apos;t have a login flow
-				yet
-			</p> */}
-
-			{/* TODO: Add moving gradient maybe maybe? */}
-			{/* content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: var(--line-width);
-    background: conic-gradient(from calc(var(--angle) + var(--start-angle)), transparent 0, var(--line-color) 20%, transparent 25%);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: xor;
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    animation: inherit;
-
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    filter: drop-shadow(0 0 10px var(--line-color)); */}
-			<form className="my-8" onSubmit={handleSubmit}>
-				{/* <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
-					<LabelInputContainer>
-						<Label htmlFor="firstname">First name</Label>
-						<Input id="firstname" placeholder="Tyler" type="text" />
+		<div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-center justify-center w-full max-w-4xl">
+			<h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+				TrackMyTransit
+			</h1>
+			<div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-gray-50 dark:bg-black">
+				<h2 className="font-bold text-2xl text-neutral-800 dark:text-neutral-200">
+					Sign In
+				</h2>
+				<form className="my-8" onSubmit={handleSubmit}>
+					<LabelInputContainer className="mb-4">
+						<Label htmlFor="email">Name</Label>
+						<Input
+							id="name"
+							placeholder="John Doe"
+							type="text"
+							value={name}
+							onChange={(event) => {
+								setName(event.target.value);
+							}}
+						/>
 					</LabelInputContainer>
-					<LabelInputContainer>
-						<Label htmlFor="lastname">Last name</Label>
-						<Input id="lastname" placeholder="Durden" type="text" />
+					<LabelInputContainer className="mb-4">
+						<Label htmlFor="password">Company</Label>
+						<Input
+							id="password"
+							placeholder="John inc."
+							type="text"
+							className=" border-black border"
+							value={company}
+							onChange={(event) => {
+								setCompany(event.target.value);
+							}}
+						/>
 					</LabelInputContainer>
-				</div> */}
-				<LabelInputContainer className="mb-4">
-					<Label htmlFor="email">Name</Label>
-					<Input
-						id="name"
-						placeholder="John Doe"
-						type="text"
-						value={name}
-						onChange={(event) => {
-							setName(event.target.value);
-						}}
-					/>
-				</LabelInputContainer>
-				<LabelInputContainer className="mb-4">
-					<Label htmlFor="password">Company</Label>
-					<Input
-						id="password"
-						placeholder="John inc."
-						type="text"
-						className=" border-black border"
-						value={company}
-						onChange={(event) => {
-							setCompany(event.target.value);
-						}}
-					/>
-				</LabelInputContainer>
-				<LabelInputContainer className="mb-4">
-					<Label htmlFor="email">Email Address</Label>
-					<Input
-						id="email"
-						placeholder="johndoe@fc.com"
-						type="email"
-						value={email}
-						onChange={(event) => {
-							setEmail(event.target.value);
-						}}
-					/>
-				</LabelInputContainer>
-				<LabelInputContainer className="mb-4">
-					<Label htmlFor="password">Password</Label>
-					<Input
-						id="password"
-						placeholder="••••••••"
-						type="password"
-						value={password}
-						onChange={(event) => {
-							setPassword(event.target.value);
-						}}
-					/>
-				</LabelInputContainer>
+					<LabelInputContainer className="mb-4">
+						<Label htmlFor="email">Email Address</Label>
+						<Input
+							id="email"
+							placeholder="johndoe@fc.com"
+							type="email"
+							value={email}
+							onChange={(event) => {
+								setEmail(event.target.value);
+							}}
+						/>
+					</LabelInputContainer>
+					<LabelInputContainer className="mb-4">
+						<Label htmlFor="password">Password</Label>
+						<Input
+							id="password"
+							placeholder="••••••••"
+							type="password"
+							value={password}
+							onChange={(event) => {
+								setPassword(event.target.value);
+							}}
+						/>
+					</LabelInputContainer>
 
-				<button
-					className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
-					type="submit"
-				>
-					Sign up &rarr;
-					<BottomGradient />
-				</button>
-			</form>
+					<button
+						className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+						type="submit"
+					>
+						Sign up &rarr;
+						<BottomGradient />
+					</button>
+				</form>
+			</div>
 		</div>
 	);
 }
