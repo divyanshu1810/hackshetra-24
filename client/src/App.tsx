@@ -1,9 +1,9 @@
-import { SignupFormDemo } from "./onboarding/signup-form";
+import SignupPage from "./onboarding/signup-page";
 
 function App() {
 	return (
 		<>
-			<SignupFormDemo />
+			<SignupPage />
 		</>
 	);
 }
