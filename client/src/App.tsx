@@ -8,7 +8,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<TypewriterEffectDemo />} />
+          <Route path="/hero" element={<TypewriterEffectDemo />} />
           <Route path="/login" element={<LoginFormDemo />} />
         </Routes>
       </BrowserRouter>
