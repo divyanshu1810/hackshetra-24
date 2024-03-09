@@ -1,3 +1,4 @@
+import { ObjectId } from "mongodb";
 import database from "../../loaders/database";
 import { Transit } from "../../models/transit";
 
@@ -6,7 +7,8 @@ export const handleCreateTransit = async (transit: Transit, user: string) => {
     await collection.insertOne({
         ...transit,
         userId: user,
-        isDeleted: false
+        isDeleted: false,
+        createdAt: new Date(),
     });
 };
 
@@ -20,45 +22,15 @@ export const handleGetTransit = async (user: string) => {
 
 export const handleGetTransitById = async (id: string, user: string) => {
     const collection = (await database()).collection('transit');
-    const data = await collection.findOne({ _id: id, userId: user });
-    if (!data) {
-        throw new Error('Transit not found');
-    }
-    if (data.isDeleted) {
-        throw new Error('Transit not found');
-    }
-    if (data.userId !== user) {
-        throw new Error('Transit not found');
-    }
-    return data;
+    return await collection.findOne({ _id: new ObjectId(id), userId: user, isDeleted: false });
 }
 
 export const handleUpdateTransit = async (id: string, transit: Transit, user: string) => {
     const collection = (await database()).collection('transit');
-    const data = await collection.findOne({ _id: id, userId: user });
-    if (!data) {
-        throw new Error('Transit not found');
-    }
-    if (data.isDeleted) {
-        throw new Error('Transit not found');
-    }
-    if (data.userId !== user) {
-        throw new Error('Transit not found');
-    }
-    await collection.updateOne({ _id: id }, { $set: transit });
+    return await collection.updateOne({ _id: new ObjectId(id), userId: user, isDeleted: false }, { $set: transit });
 };
 
 export const handleDeleteTransit = async (id: string, user: string) => {
     const collection = (await database()).collection('transit');
-    const data = await collection.findOne({ _id: id, userId: user });
-    if (!data) {
-        throw new Error('Transit not found');
-    }
-    if (data.isDeleted) {
-        throw new Error('Transit not found');
-    }
-    if (data.userId !== user) {
-        throw new Error('Transit not found');
-    }
-    await collection.updateOne({ _id: id }, { $set: { isDeleted: true } });
+    return await collection.updateOne({ _id: new ObjectId(id), userId: user, isDeleted: false }, { $set: { isDeleted: true } });
 };

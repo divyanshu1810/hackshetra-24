@@ -5,11 +5,11 @@ export default (): Router => {
     const app = Router();
 
     //TODO: add routes here...
-    app.post('/create', createTransit);
-    app.get('/get', getTransit);
-    app.get('/get/:id', getTransitById);
-    app.put('/update/:id', updateTransit);
-    app.delete('/delete/:id', deleteTransit);
+    app.post('/', createTransit);
+    app.get('/', getTransit);
+    app.get('/:id', getTransitById);
+    app.put('/:id', updateTransit);
+    app.delete('/:id', deleteTransit);
 
     return app;
 };
