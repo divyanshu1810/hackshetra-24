@@ -1,3 +1,4 @@
+
 import SignupPage from "./onboarding/signup-page";
 import { LoginFormDemo } from "./onboarding/login-form";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -17,6 +18,5 @@ function App() {
 			</BrowserRouter>
 		</>
 	);
-}
 
 export default App;
