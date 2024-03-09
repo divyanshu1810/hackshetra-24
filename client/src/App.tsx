@@ -5,6 +5,7 @@ import ViewTransits from "./dashboard/view-transits";
 import Landing from "./landing/landing";
 import LoginPage from "./onboarding/login-page";
 import Dashboard from "./dashboard/dashboard";
+import ReachedTransits from "./dashboard/reached-transits";
 
 function App() {
 	return (
@@ -18,6 +19,10 @@ function App() {
 					<Route path="/dashboard/new-transit" element={<NewTransit />} />
 					<Route path="/dashboard/view-transits" element={<ViewTransits />} />
 					<Route path="/dashboard" element={<Dashboard />} />
+					<Route
+						path="/dashboard/reached-transits"
+						element={<ReachedTransits />}
+					/>
 				</Routes>
 			</BrowserRouter>
 		</>
