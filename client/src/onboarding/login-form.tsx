@@ -5,15 +5,11 @@ import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
 import axios from "axios";
 
-export function SignupFormDemo() {
+export function LoginFormDemo() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [name, setName] = useState("");
-	const [company, setCompany] = useState("");
-
+    
 	const formData = {
-		name: name,
-		company: company,
 		email: email,
 		password: password,
 	};
@@ -68,31 +64,7 @@ export function SignupFormDemo() {
 						<Input id="lastname" placeholder="Durden" type="text" />
 					</LabelInputContainer>
 				</div> */}
-				<LabelInputContainer className="mb-4">
-					<Label htmlFor="email">Name</Label>
-					<Input
-						id="name"
-						placeholder="John Doe"
-						type="text"
-						value={name}
-						onChange={(event) => {
-							setName(event.target.value);
-						}}
-					/>
-				</LabelInputContainer>
-				<LabelInputContainer className="mb-4">
-					<Label htmlFor="password">Company</Label>
-					<Input
-						id="password"
-						placeholder="John inc."
-						type="text"
-						className=" border-black border"
-						value={company}
-						onChange={(event) => {
-							setCompany(event.target.value);
-						}}
-					/>
-				</LabelInputContainer>
+
 				<LabelInputContainer className="mb-4">
 					<Label htmlFor="email">Email Address</Label>
 					<Input
