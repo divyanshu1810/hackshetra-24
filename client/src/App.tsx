@@ -1,16 +1,17 @@
-
 import SignupPage from "./onboarding/signup-page";
 import { LoginFormDemo } from "./onboarding/login-form";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { NewTransit } from "./dashboard/new-transit";
 import ViewTransits from "./dashboard/view-transits";
+import { LandingPage } from "./landing/landing-page";
 
 function App() {
 	return (
 		<>
 			<BrowserRouter>
 				<Routes>
-					<Route path="/" element={<SignupPage />} />
+					<Route path="/" element={<LandingPage />} />
+					<Route path="/signup" element={<SignupPage />} />
 					<Route path="/login" element={<LoginFormDemo />} />
           <Route path="/signup" element={<SignupPage />} />
 					<Route path="/new-transit" element={<NewTransit />} />
