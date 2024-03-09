@@ -1,10 +1,9 @@
 import database from "../../loaders/database";
 import bcrypt from 'bcrypt';
-import shortid from 'shortid';
 import generateToken from "../../shared/jwt";
 import { Users } from "../../models/users";
 
-export const handleSignUp = async (name: string, email: string, password: string, role: string) => {
+export const handleSignUp = async (name: string, email: string, password: string, company: string) => {
     const collection = (await database()).collection('users');
     const user = await collection.findOne({ email });
     if (user) {
@@ -12,7 +11,7 @@ export const handleSignUp = async (name: string, email: string, password: string
     }
     const saltRounds = 10;
     const hash = await bcrypt.hash(password, saltRounds);
-    const newUser = new Users(shortid.generate(), new Date(), new Date(), name, email, hash, role, false);
+    const newUser = new Users(new Date(), new Date(), name, email, hash, company, false);
     await collection.insertOne(newUser);
 };
 
