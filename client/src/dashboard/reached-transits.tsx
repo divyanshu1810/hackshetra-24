@@ -22,9 +22,8 @@ export default function ReachedTransits() {
 					<div className="">Order date </div>
 					<div>Contact number</div>
 				</div>
-				<div className="">Status </div>
 
-				<form className="flex flex-col gap-10">
+				<form className="flex flex-col gap-5">
 					<div className="items-top flex space-x-2">
 						<Checkbox id="terms1" />
 						<div className="grid gap-1.5 leading-none">
