@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Input } from "@/ui/input";
 import { useState } from "react";
-import { stat } from "fs";
 export default function Receptionist() {
 	const [status, setStatus] = useState("");
 	return (
