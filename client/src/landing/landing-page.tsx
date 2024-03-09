@@ -1,9 +1,3 @@
-import React from 'react';
-import { cn } from '../lib/utils';
-import { Spotlight } from '../components/ui/spotlight';
-
-('use client');
-
 import { TypewriterEffect } from '../components/ui/typewriter-effect';
 
 export function TypewriterEffectDemo() {
@@ -31,6 +25,10 @@ export function TypewriterEffectDemo() {
       className: 'text-blue-500 dark:text-blue-500',
     },
   ];
+
+  const handleSignup = () => {
+    window.location.replace('/signup');
+  }
   return (
     <div className="flex flex-col items-center justify-center h-[40rem] ">
       <p className="text-neutral-600 dark:text-neutral-200 text-base  mb-10">The road to freedom starts from here</p>
@@ -39,7 +37,9 @@ export function TypewriterEffectDemo() {
         <button className="w-40 h-10 rounded-xl bg-black border dark:border-white border-transparent text-white text-sm">
           Join now
         </button>
-        <button className="w-40 h-10 rounded-xl bg-white text-black border border-black  text-sm">Signup</button>
+        <button className="w-40 h-10 rounded-xl bg-white text-black border border-black  text-sm" 
+        onClick={handleSignup}
+        >Signup</button>
       </div>
     </div>
   );
