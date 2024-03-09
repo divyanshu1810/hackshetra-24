@@ -7,7 +7,7 @@ export class Users {
     role: string;
     company: string;
     isDeleted: boolean;
-    constructor(created_at: Date, updated_at: Date, name: string, email: string, password: string, role: string, isDeleted: boolean) {
+    constructor(created_at: Date, updated_at: Date, name: string, email: string, password: string, role: string, isDeleted: boolean, company: string) {
         this.created_at = created_at;
         this.updated_at = updated_at;
         this.name = name;
@@ -15,5 +15,6 @@ export class Users {
         this.password = password;
         this.role = role;
         this.isDeleted = isDeleted;
+        this.company = company;
     }
 }
