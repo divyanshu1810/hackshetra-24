@@ -9,6 +9,11 @@ export const handleCreateTransit = async (transit: Transit, user: string) => {
     const statusId = shortid.generate();
     await collection.insertOne({
         ...transit,
+        as_per_bill: false,
+        tally_entry_to_goods: false,
+        scan_for_every_bill: false,
+        on_the_record: false,
+        received: false,
         userId: user,
         isDeleted: false,
         statusId,
