@@ -7,7 +7,7 @@ function NavBar() {
     <nav className="navbar navbar-expand-md navbar-light bg-white shadow">
       <div className="container-fluid text-black">
         <a className="navbar-brand" href="#">
-          <span className="fw-bolder fs-4">{}</span>
+          <span className="fw-bolder fs-4">{ }</span>
         </a>
         <button
           className="navbar-toggler"

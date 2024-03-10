@@ -11,27 +11,16 @@ export default function Receptionist() {
             <div className="flex items-center">
               <span className="text-white font-semibold text-lg">TrackMYTransit</span>
             </div>
-            <div className="flex items-center">
-              <Link
-                to="/dashboard/view-transit"
-                className="text-gray-100 hover:bg-zinc-900  hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Track Transit
-              </Link>
-
-              <a
-                href="#"
-                className="text-gray-100 hover:bg-zinc-900 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Pre-inventory Checks
-              </a>
-              <a
-                href="#"
-                className="text-gray-100 hover:bg-zinc-900 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              >
-                Admin panel
-              </a>
-            </div>
+            <button
+              onClick={() => {
+                localStorage.setItem('isLoggedIn', 'false');
+                localStorage.setItem('token', '');
+                localStorage.setItem('role', '');
+                localStorage.setItem('name', '');
+                window.location.href = '/login';
+              }}
+              className="text-white font-semibold text-lg bg-red-500 px-4 py-1 rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600"
+            >Log Out</button>
           </div>
         </div>
       </nav>
