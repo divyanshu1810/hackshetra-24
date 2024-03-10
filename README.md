@@ -17,7 +17,7 @@ crafted with <span style="color: #8b0000;">&hearts;</span> by your besties <a hr
 <br>
 
 
-## finalist @ HackShetra '24
+## finalists @ HackShetra '24
 
 **************************
 
