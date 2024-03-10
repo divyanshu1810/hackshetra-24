@@ -20,6 +20,7 @@ export function SignupFormDemo() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     axios
       .post('http://localhost:3000/api/auth/signup', formData)
       .then(response => {
@@ -30,6 +31,7 @@ export function SignupFormDemo() {
         console.log(error);
       });
   };
+
   return (
     <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-center justify-center w-full max-w-4xl">
       <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">TrackMyTransit</h1>
