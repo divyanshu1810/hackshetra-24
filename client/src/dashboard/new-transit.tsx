@@ -24,8 +24,7 @@ export function NewTransit() {
 		destination: destination,
 	};
 
-	const auth_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRpdnlhbnNodS4xODEwQGdtYWlsLmNvbSIsImlhdCI6MTcxMDAxNjUwMCwiZXhwIjoxNzEwMTAyOTAwfQ.P3_tOgc-71tafObb-Xu_0GfANgFXZlHbuF6k2p7qkio"; 
-
+	const auth_token = localStorage.getItem("token");
 	const headers = {
 		Authorization: `Bearer ${auth_token}`,
 	};

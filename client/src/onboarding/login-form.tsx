@@ -20,7 +20,13 @@ export function LoginFormDemo() {
       .post('http://localhost:3000/api/auth/login', formData)
       .then(response => {
         window.location.href = '/dashboard';
+        const { token, role, name } = response.data.data; // Assuming the response contains these fields
+        localStorage.setItem('token', token);
+        localStorage.setItem('role', role);
+        localStorage.setItem('name', name);
+        localStorage.setItem('isLoggedIn', 'true');
         console.log(response);
+        console.log(`'${localStorage.getItem('name')}' is logged in as a '${localStorage.getItem('role')}' user.`)
       })
       .catch(error => {
         console.log(error);
