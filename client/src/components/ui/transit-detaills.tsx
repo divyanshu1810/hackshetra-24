@@ -59,6 +59,7 @@ const TransitDetails: React.FC = () => {
                 <div className="flex justify-between">
                     <h2 className="text-lg font-semibold mb-2">Status</h2>
                     <div className="space-x-2">
+                       
                         <button className="bg-blue-500 text-white px-2 py-1 rounded-md mb-4"
                             onClick={() => window.location.href = `/transit/create-container/${id}`}
                         >Create Containers</button>

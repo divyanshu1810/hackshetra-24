@@ -1,8 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 export default function Receptionist() {
-  const [status, setStatus] = useState('');
   return (
     <div>
       <nav className="bg-gray-800 p-4">
@@ -30,7 +28,7 @@ export default function Receptionist() {
         </Link>
       </div>
 
-      <div className="w-full flex gap-5 flex-col max-w-xl rounded-xl m-5 p-5 bg-orange-100">
+      {/* <div className="w-full flex gap-5 flex-col max-w-xl rounded-xl m-5 p-5 bg-orange-100">
         <div className="flex w-full justify-between">
           <div className="font-bold text-lg">Company Name </div>
           <div>Transit ID</div>
@@ -59,7 +57,7 @@ export default function Receptionist() {
         <Button type="button" onClick={() => setStatus(status)}>
           Reached Warehouse
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 }

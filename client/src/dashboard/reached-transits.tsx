@@ -6,23 +6,10 @@ export default function ReachedTransits() {
 	const [status, setStatus] = useState("");
 	return (
 		<div>
-			<div className="flex flex-col items-start justify-center m-10">
-				<Link to="new-transit">
-					<Button>Add new transit</Button>
-				</Link>
-			</div>
+			
 
 			<div className="w-full flex gap-5 flex-col max-w-xl rounded-xl m-5 p-5 bg-orange-100">
-				<div className="flex w-full justify-between">
-					<div className="font-bold text-lg">Company Name </div>
-					<div>Transit ID</div>
-				</div>
-
-				<div className="flex w-full justify-between">
-					<div className="">Order date </div>
-					<div>Contact number</div>
-				</div>
-
+				
 				<form className="flex flex-col gap-5">
 					<div className="items-top flex space-x-2">
 						<Checkbox id="terms1" />
@@ -70,13 +57,9 @@ export default function ReachedTransits() {
 						</div>
 					</div>
 
-					<Button type="button" onClick={() => setStatus(status)}>
-						Update
-					</Button>
+				
 				</form>
-				<Button type="button" onClick={() => setStatus(status)}>
-					Updated inventory
-				</Button>
+				
 			</div>
 		</div>
 	);
