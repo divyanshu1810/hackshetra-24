@@ -6,6 +6,7 @@ import Landing from "./landing/landing";
 import LoginPage from "./onboarding/login-page";
 import Dashboard from "./dashboard/dashboard";
 import Receptionist from "./dashboard/receptionist";
+import TransitDetails from "./components/ui/transit-detaills";
 
 function App() {
 	return (
@@ -18,7 +19,7 @@ function App() {
 					<Route path="/signup" element={<SignupPage />} />
 					<Route path="/dashboard/new-transit" element={<NewTransit />} />
 					<Route path="/dashboard/view-transit" element={<Receptionist />} />
-
+					<Route path="/transit/:id" element={<TransitDetails/>} />
 					<Route
 						path="/dashboard/reached-transits"
 						element={<ReachedTransits />}
