@@ -9,6 +9,33 @@ export default function Receptionist() {
             <div className="flex items-center">
               <span className="text-white font-semibold text-lg">TrackMYTransit</span>
             </div>
+            {localStorage.getItem('role') === 'admin' || localStorage.getItem('role') === 'receptionist' ? (
+              <Link to="/dashboard">
+  <div className="text-white font-semibold text-lg">
+    Incoming Transits
+  </div></Link>
+) : (
+  <div></div>
+)}
+ {localStorage.getItem('role') === 'admin' || localStorage.getItem('role') === 'factory-worker' ? (
+  <Link to="/dashboard/reached-transits">
+  <div className="text-white font-semibold text-lg">
+    Reached Transits
+  </div>
+  </Link>
+) : (
+  <div></div>
+)}
+            
+            {localStorage.getItem('role') === 'admin' || localStorage.getItem('role') === 'factory-worker' ? (
+  <Link to="/dashboard/admin-panel">
+  <div className="text-white font-semibold text-lg">
+   Admin Pannel
+  </div>
+  </Link>
+) : (
+  <div></div>
+)}
             <button
               onClick={() => {
                 localStorage.setItem('isLoggedIn', 'false');
