@@ -5,7 +5,7 @@ export default function Dashboard() {
   return (
     <>
       {localStorage.getItem('isLoggedIn') === 'true' ? (
-        localStorage.getItem('role') === 'receptionist' ? (
+        localStorage.getItem('role') === 'receptionist' || localStorage.getItem('role') === 'admin' ? (
           <div>
             <Receptionist />
             <div>
