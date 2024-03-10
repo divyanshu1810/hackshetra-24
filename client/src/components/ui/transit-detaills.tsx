@@ -83,11 +83,20 @@ const TransitDetails: React.FC = () => {
                 {containers.length > 0 ? (
                     containers.map(container => (
                         <div key={container._id} className="mb-4">
-                            <p><strong>Bill Number:</strong> {container.billNumber}</p>
-                            <p><strong>Amount:</strong> {container.amount}</p>
-                            <p><strong>User ID:</strong> {container.userId}</p>
-                            <p><strong>Created At:</strong> {container.createdAt}</p>
-                            <p><strong>Updated At:</strong> {container.updatedAt}</p>
+                            <div className="flex justify-between items-center">
+                                <div>
+                                    <p><strong>Bill Number:</strong> {container.billNumber}</p>
+                                    <p><strong>Amount:</strong> {container.amount}</p>
+                                    <p><strong>User ID:</strong> {container.userId}</p>
+                                    <p><strong>Created At:</strong> {container.createdAt}</p>
+                                    <p><strong>Updated At:</strong> {container.updatedAt}</p>
+                                </div>
+                                <button className="bg-blue-500 text-white px-2 py-1 rounded-md mr-2"
+                                    onClick={() => window.location.href = `/transit/${id}/update-container/${container._id}`}
+                                >
+                                    Update Container
+                                </button>
+                            </div>
                         </div>
                     ))
                 ) : (
