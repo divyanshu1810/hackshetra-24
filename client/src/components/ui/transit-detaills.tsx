@@ -56,7 +56,12 @@ const TransitDetails: React.FC = () => {
         <div className="container mx-auto px-4 py-8">
             <h1 className="text-2xl font-bold mb-4">Transit Details</h1>
             <div className="bg-white rounded-lg shadow-md p-4 mb-4">
-                <h2 className="text-lg font-semibold mb-2">Status</h2>
+                <div className="flex justify-between">
+                    <h2 className="text-lg font-semibold mb-2">Status</h2>
+                    <button className="bg-blue-500 text-white px-2 py-1 rounded-md mb-4"
+                        onClick={() => window.location.href = `/transit/update/${id}`}
+                    >Update Status</button>
+                </div>
                 {status ? (
                     <div>
                         <p><strong>Location:</strong> {status.location}</p>

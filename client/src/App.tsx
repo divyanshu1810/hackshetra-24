@@ -8,6 +8,7 @@ import ReachedTransits from './dashboard/reached-transits';
 import Landing from './landing/landing';
 import LoginPage from './onboarding/login-page';
 import CreateUserPage from './dashboard/admin-panel';
+import UpdateTransit from "./components/ui/update-transit";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
             element={<ReachedTransits />}
           />
           <Route path="/dashboard/reached-transits" element={<ReachedTransits />} />
-
+          <Route path="/transit/update/:id" element={<UpdateTransit />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
