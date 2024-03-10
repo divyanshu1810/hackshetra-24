@@ -5,19 +5,23 @@ import { Input } from '../ui/input';
 import { cn } from '@/lib/utils';
 import axios from 'axios';
 
-export function LoginFormDemo() {
+export function CreateUserFormDemo() {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [role, setRole] = useState('');
 
   const formData = {
+    name: name,
     email: email,
     password: password,
+    role: role,
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     axios
-      .post('http://localhost:3000/api/auth/login', formData)
+      .post('http://localhost:3000/api/auth/signup', formData)
       .then(response => {
         window.location.href = '/dashboard';
         console.log(response);
@@ -30,9 +34,21 @@ export function LoginFormDemo() {
     <div className="flex flex-col lg:flex-row gap-10 lg:gap-0 items-center justify-center w-full max-w-4xl">
       <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">TrackMyTransit</h1>
       <div className="max-w-sm w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-slate-50 dark:bg-black">
-        <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">Sign In</h2>
+        <h2 className="font-bold text-xl text-neutral-800 dark:text-neutral-200">Create User</h2>
 
         <form className="my-8" onSubmit={handleSubmit}>
+          <LabelInputContainer className="mb-4">
+            <Label htmlFor="name">Name</Label>
+            <Input
+              id="name"
+              placeholder="John Doe"
+              type="name"
+              value={name}
+              onChange={event => {
+                setName(event.target.value);
+              }}
+            />
+          </LabelInputContainer>
           <LabelInputContainer className="mb-4">
             <Label htmlFor="email">Email Address</Label>
             <Input
@@ -56,14 +72,13 @@ export function LoginFormDemo() {
                 setPassword(event.target.value);
               }}
             />
-          </LabelInputContainer>
-            <button
-              className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
-              type="submit"
-             >
-              log In &rarr;
-              <BottomGradient />
-            </button>
+          <button
+            className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+            type="submit"
+          >
+            Create &rarr;
+            <BottomGradient />
+          </button>
         </form>
       </div>
     </div>
