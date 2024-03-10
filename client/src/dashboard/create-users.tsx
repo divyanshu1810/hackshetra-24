@@ -20,8 +20,16 @@ export function CreateUserFormDemo() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const authToken = localStorage.getItem('token');
+
+    const headers = {
+      Authorization: `Bearer ${authToken}`,
+      'Content-Type': 'application/json',
+    };
+
     axios
-      .post('http://localhost:3000/api/auth/signup', formData)
+      .post('http://localhost:3000/api/user/create-user', formData, { headers })
       .then(response => {
         window.location.href = '/dashboard';
         console.log(response);
@@ -93,7 +101,6 @@ export function CreateUserFormDemo() {
             <BottomGradient />
           </button>
         </form>
-
       </div>
     </div>
   );
