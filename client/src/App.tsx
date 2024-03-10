@@ -9,6 +9,7 @@ import Landing from './landing/landing';
 import LoginPage from './onboarding/login-page';
 import CreateUserPage from './dashboard/admin-panel';
 import UpdateTransit from "./components/ui/update-transit";
+import CreateContainer from "./components/ui/create-container";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           />
           <Route path="/dashboard/reached-transits" element={<ReachedTransits />} />
           <Route path="/transit/update/:id" element={<UpdateTransit />} />
+          <Route path="/transit/create-container/:id" element={<CreateContainer />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
