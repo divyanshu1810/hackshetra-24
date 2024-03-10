@@ -7,8 +7,6 @@ import { NewTransit } from './dashboard/new-transit';
 import ReachedTransits from './dashboard/reached-transits';
 import Landing from './landing/landing';
 import LoginPage from './onboarding/login-page';
-import Dashboard from './dashboard/dashboard';
-import Receptionist from './dashboard/receptionist';
 import CreateUserPage from './dashboard/admin-panel';
 
 function App() {
@@ -23,11 +21,11 @@ function App() {
           <Route path="/dashboard/new-transit" element={<NewTransit />} />
           <Route path="/dashboard/view-transit" element={<Receptionist />} />
           <Route path="/dashboard/admin-panel" element={<CreateUserPage />} />
-          <Route path="/transit/:id" element={<TransitDetails/>} />
-					<Route
-						path="/dashboard/reached-transits"
-						element={<ReachedTransits />}
-					/>
+          <Route path="/transit/:id" element={<TransitDetails />} />
+          <Route
+            path="/dashboard/reached-transits"
+            element={<ReachedTransits />}
+          />
           <Route path="/dashboard/reached-transits" element={<ReachedTransits />} />
 
           <Route path="/dashboard" element={<Dashboard />} />
